@@ -1,6 +1,6 @@
 // npm installs
 import 'react-toastify/dist/ReactToastify.css';
-import { useState, useEffect, useCallback, useRef  } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useDispatch, useSelector         } from 'react-redux';
 import { useNavigate                      } from 'react-router';
 import { ToastContainer, toast            } from 'react-toastify';
@@ -114,7 +114,7 @@ export default function Form({ currentId, setCurrentId }) {
           <Styled.FileInput>
               <input ref={imageRef} type='file' onChange={handleImgUpload} />
               {/** DONT RENDER ANYTHING IF NO IMAGE HAS BEEN UPLOADED */}
-              {postData.selectedFile.length > 0 ? console.log("GAFFOT")(
+              {postData.selectedFile.length > 0 ? (
                 <img src={postData.selectedFile} height="20px" width="20px" style={{marginTop:'3%',}} alt={postData.selectedFile} />
               ) :  (
                 <p>   </p>

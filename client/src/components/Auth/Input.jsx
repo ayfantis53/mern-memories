@@ -6,7 +6,7 @@ import { IconButton, Grid, InputAdornment, TextField } from "@mui/material";
 
 /** ----------------------------------------------------------------------------------------
  * 
- * @returns 
+ * @returns Custom text field components for text input on form
  * ----------------------------------------------------------------------------------------*/
 export default function Input({ name, handleChange, label, autoFocus, type, handleShowPassword }) {
 

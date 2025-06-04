@@ -51,12 +51,14 @@ export default function Auth() {
         setShowPassword(!showPassword);
     };
 
+    // Decides whether sign in or signup is displayed.
     const switchMode = () => {
         setIsSignUp(!isSignup);
         setShowPassword(false);
     };
 
-    // Google auth.
+    /** Google auth */
+    // Success.
     const googleSuccess = async (res) => {
         const result = res?.profileObj;
         const token = res?.tokenId;
@@ -69,7 +71,7 @@ export default function Auth() {
             console.log(error)
         }
     };
-
+    // Failure.
     const googleFailure = (error) => {
         console.log("Google Sign in was unsuccessful");
         console.log(error);
@@ -101,24 +103,25 @@ export default function Auth() {
                         {/** EMAIL INPUT */}
                         <Input name='email' label='Email Address' handleChange={handleChange} type="email" />
                         {/** PASSWORD INPUT */}
-                        <Input name='password' label='Password' handleChange={handleChange} type={showPassword ? "text" : "password"} handleShowPassword={handleShowPassword} />
-                        { isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type='password' />}
+                        <Input name='password' label='Password' handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
+                        { isSignup && <Input name='confirmPassword' label='Repeat Password' handleChange={handleChange} type='password' />}
                     </Grid>
                     {/** SUBMIT BUTTON */}
-                    <Styled.SubmitBtn type='submit' fullWidth variant="contained"  color="primary" >
+                    <Styled.SubmitBtn type='submit' fullWidth variant='contained' color='primary'>
                         { isSignup ? 'Sign Up' : 'Sign In' } 
                     </Styled.SubmitBtn>
                     {/** GOOGLE AUTH LOGIN BUTTON */}
                     <GoogleLogin 
-                        onSuccess={googleSuccess}
-                        onFailure={googleFailure}
-                        render = {(renderProps) => (
+                        onSuccess = {googleSuccess}
+                        onFailure = {googleFailure}
+                        render    = {(renderProps) => (
                             <Styled.GoogleBtn color='success' fullWidth onClick={renderProps.onClick} disabled={renderProps.disabled} startIcon={<Icon/>} variant='contained'>
                                 Google Sign In
                             </Styled.GoogleBtn>
                         )}
                         cookiePolicy='single_host_origin'
                     />
+                    {/** SIGN IN OR SIGN UP LINK */}
                     <Grid container justify='flex-end'>
                         <Grid>
                             <Button onClick={switchMode} color='secondary'>

@@ -31,6 +31,7 @@ export default function CommentSection({ post }) {
 
     return (
         <Styled.Outer>
+            {/** EXISTING COMMENTS */}
             <Styled.Inner>
                 <Typography gutterBottom variant='h6'><strong> Comments </strong></Typography>
                 {comments.map((comment, i) => (
@@ -41,7 +42,8 @@ export default function CommentSection({ post }) {
                 {/** SCROLL TO NEW COMMENT */}
                 <div ref={commentsRef} />
             </Styled.Inner>
-
+            
+            {/** NEW COMMENTS */}
             {user?.result?.name && (
                 <div style={{width:'70%'}}>
                     <Typography gutterBottom variant='h6'>Write a Comment</Typography>

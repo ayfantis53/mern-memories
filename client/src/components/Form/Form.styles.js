@@ -1,6 +1,6 @@
 // npm installs
 import { styled } from '@mui/system';
-import { Paper } from '@mui/material';
+import { Paper  } from '@mui/material';
 
 
 /**

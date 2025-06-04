@@ -19,7 +19,7 @@ function App() {
 
   return (
     <Router>
-      <Container maxWidth="xl" sx={{mb:4}}>
+      <Container maxWidth='xl' sx={{mb:4}}>
         <Navbar />
           <Routes>
             <Route path='/'             element       = { <Navigate replace to='/posts'/>                    } />

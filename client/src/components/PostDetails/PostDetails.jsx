@@ -53,19 +53,19 @@ export default function PostDetails() {
       <Styled.PostCard>
         <Styled.Section>
           {/** TITLE */}
-          <Typography variant="h3" component="h2"> {post.title} </Typography>
+          <Typography variant='h3' component='h2'> {post.title} </Typography>
           {/** TAGS */}
-          <Typography variant="h7" component="h3" color="textSecondary" gutterBottom> {post.tags.map((tag) => `#${tag} `)} </Typography>
+          <Typography variant='h7' component='h3' color='textSecondary' gutterBottom> {post.tags.map((tag) => `#${tag} `)} </Typography>
           {/** MESSAGE */}
-          <Typography variant="body1" component="p" gutterBottom> {post.message} </Typography>
+          <Typography variant='body1' component='p' gutterBottom> {post.message} </Typography>
           {/** POST NAME */}
-          <Typography variant="h6"> Created by: <i> {post.name} </i> </Typography>
+          <Typography variant='h6'> Created by: <i> {post.name} </i> </Typography>
           {/** DATE AND TIME CREATED */}
-          <Typography variant="body1"> - {moment(post.createdAt).fromNow()}</Typography>
+          <Typography variant='body1'> - {moment(post.createdAt).fromNow()}</Typography>
 
           {/** REALTIME CHAT DISCLAIMER */}
           <Divider style={{ margin: '20px 0' }} />
-          <Typography variant="body1"><strong> Realtime Chat - coming soon! </strong></Typography>
+          <Typography variant='body1'><strong> Realtime Chat - coming soon! </strong></Typography>
           
           {/** COMMENTS */}
           <Divider style={{ margin: '20px 0' }} />
@@ -82,18 +82,18 @@ export default function PostDetails() {
       {/** RECOMMENDED POSTS */}
       {!recommendedPosts.length && (
         <Styled.Section>
-          <Typography gutterBottom variant="h5"> You might also like: </Typography>
+          <Typography gutterBottom variant='h5'> You might also like: </Typography>
 
           <Divider />
 
           <Styled.Recommended>
             {recommendedPosts.map(({ title, name, message, likes, selectedFile, _id }) => (
               <div style={{ margin: '10px', cursor: 'pointer', borderStyle:'groove', borderRadius:'15px', padding: '10px'}} onClick={() => openPost(_id)} key={_id}>
-                <Typography gutterBottom variant="h6"> {title} </Typography>
-                <Typography gutterBottom variant="subtitle2"> <i>{name}</i> </Typography>
-                <Typography gutterBottom variant="subtitle2"> {message} </Typography>
-                <Typography gutterBottom variant="subtitle1"> <strong>Likes:</strong> {likes.length} </Typography>
-                <img src={selectedFile} alt='memory.png' width="200px" />
+                <Typography gutterBottom variant='h6'> {title} </Typography>
+                <Typography gutterBottom variant='subtitle2'> <i>{name}</i> </Typography>
+                <Typography gutterBottom variant='subtitle2'> {message} </Typography>
+                <Typography gutterBottom variant='subtitle1'> <strong>Likes:</strong> {likes.length} </Typography>
+                <img src={selectedFile} alt='memory.png' width='200px' />
               </div>
             ))}
           </Styled.Recommended>

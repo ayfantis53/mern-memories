@@ -18,8 +18,8 @@ import reportWebVitals from './reportWebVitals';
 
 
 const google_client_id = process.env.REACT_APP_GOOGLE_CLIENT_ID;
-const store = configureStore({reducer: reducers}, compose(applyMiddleware(thunk)));
-const root  = ReactDOM.createRoot(document.getElementById('root'));
+const store            = configureStore({reducer: reducers}, compose(applyMiddleware(thunk)));
+const root             = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>

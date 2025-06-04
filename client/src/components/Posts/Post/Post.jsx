@@ -53,13 +53,13 @@ export default function Post({ post, setCurrentId }) {
   if (likes.length > 0) {
     return likes.find((like) => like === userId)
       ? (
-        <><ThumbUpAltIcon fontSize="small" /> &nbsp;{likes.length > 2 ? `You and ${likes.length - 1} others` : `${likes.length} like${likes.length > 1 ? 's' : ''}` } </>
+        <><ThumbUpAltIcon fontSize='small' /> &nbsp;{likes.length > 2 ? `You and ${likes.length - 1} others` : `${likes.length} like${likes.length > 1 ? 's' : ''}` } </>
       ) : (
-        <><ThumbUpAltOutlined fontSize="small" /> &nbsp;{likes.length} {likes.length === 1 ? 'Like' : 'Likes'} </>
+        <><ThumbUpAltOutlined fontSize='small' /> &nbsp;{likes.length} {likes.length === 1 ? 'Like' : 'Likes'} </>
       )
   }
 
-    return <><ThumbUpAltOutlined fontSize="small" />&nbsp;Like</>
+    return <><ThumbUpAltOutlined fontSize='small' />&nbsp;Like</>
   }
     
   return (
@@ -68,37 +68,37 @@ export default function Post({ post, setCurrentId }) {
       <Styled.PostMedia image={post.selectedFile || backup} title={post.title} onClick={openPosts} style={{cursor: 'pointer'}}/>
       {/** POST NAME AND DATE CREATED */}  
       <Styled.Overlay>
-        <Typography variant="h6"> {post.name} </Typography>
-        <Typography variant="body2"> {moment(post.createdAt).fromNow()} </Typography>
+        <Typography variant='h6'> {post.name} </Typography>
+        <Typography variant='body2'> {moment(post.createdAt).fromNow()} </Typography>
       </Styled.Overlay>
       {/** POST TITLE AND DATE CREATED */}
       { ((user?.result?.googleId === post?.creator) || (user?.result?._id === post?.creator)) && (
-        <Styled.Overlay2 name="edit">
+        <Styled.Overlay2 name='edit'>
           <Button style={{color:'white'}} size='small' onClick={() => {setCurrentId(post._id)}}>
-            <MoreHorizIcon fontSize="default" />
+            <MoreHorizIcon fontSize='default' />
           </Button>
         </Styled.Overlay2>
       )}
       {/** TAGS */}
       <Styled.Details>
-        <Typography variant="body2" color="textSecondary"> {post.tags.map((tag)=>` #${tag}`)} </Typography>
+        <Typography variant='body2' color='textSecondary'> {post.tags.map((tag)=>` #${tag}`)} </Typography>
       </Styled.Details>
       {/** POST TITLE */}
-      <Styled.Title gutterBottom variant="h5" component="h2"> <u>{post.title}</u> </Styled.Title>
+      <Styled.Title gutterBottom variant='h5' component='h2'> <u>{post.title}</u> </Styled.Title>
       {/** POST MESSAGE */}
       <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p"> {post.message.split(' ').splice(0, 20).join(' ')}... </Typography>
+        <Typography variant='body2' color='textSecondary' component='p'> {post.message.split(' ').splice(0, 20).join(' ')}... </Typography>
       </CardContent>
       {/** BUTTONS */}
       <Styled.PostActions>
         {/** POST LIKE BUTTON */}
-        <Button size="small" color="primary" disabled={!user?.result} onClick={ handleLike }>
+        <Button size='small' color='primary' disabled={!user?.result} onClick={ handleLike }>
           <Likes />
         </Button>
         {/** POST DELETE BUTTON */}
         {( (user?.result?.googleId === post?.creator) || (user?.result?._id === post?.creator)) && (
-          <Button size="small" color="secondary" onClick={ () => {dispatch(deletePosts(post._id, navigate))} }>
-            <DeleteIcon fontSize="small" />
+          <Button size='small' color='secondary' onClick={ () => {dispatch(deletePosts(post._id, navigate))} }>
+            <DeleteIcon fontSize='small' />
             Delete
           </Button>
         )}

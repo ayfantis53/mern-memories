@@ -1,5 +1,8 @@
-
-const icon = () => (
+/** ----------------------------------------------------------------------------------------
+ * 
+ * @returns Icon for Google button
+ * ----------------------------------------------------------------------------------------*/
+const Icon = () => (
   <svg style={{ width: '20px', height: '20px' }} viewBox="0 0 24 24">
     <path
       fill="currentColor"
@@ -8,4 +11,4 @@ const icon = () => (
   </svg>
 );
 
-export default icon;
+export default Icon;

@@ -1,4 +1,4 @@
-// npm start
+// npm installs
 import { createTheme } from "@mui/material";
 
 

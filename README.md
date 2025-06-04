@@ -83,8 +83,8 @@
         * > Create repos [mern-memories-client] and [mern-memories-server] in Dockerhub before pushing. 
             images there. Need images in Dockerhub because thats where Kubernetes manifest files pull it from.
         * > Change routes in [./server/src/index.js]
-            > `line 22`: take out the "/api"
-            > `line 23`: take out the "/api"
+            > `line 26`: take out the "/api"
+            > `line 27`: take out the "/api"
         * > Build Images.
             #### `docker build -t ayfantis53/mern-memories-client ./client`
             #### `docker build -t ayfantis53/mern-memories-server ./server`
