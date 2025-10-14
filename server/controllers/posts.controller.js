@@ -31,7 +31,7 @@ export const getPosts = async(req, res) => {
 
     try {
         const LIMIT      = 6;
-        // Get Starting Index of every page
+        // Get Starting Index of every page for pagination.
         const startIndex = (Number(page) - 1) * LIMIT;
         const total      = await PostMessage.countDocuments({});
         const posts      = await PostMessage.find().sort({_id: -1}).limit(LIMIT).skip(startIndex);
@@ -51,6 +51,7 @@ export const getPostsBySearch = async (req, res) => {
     const { searchQuery, tags } = req.query;
     
     try {
+        // Find post using search words and tags.
         const title = new RegExp(searchQuery, "i");
         const posts = await PostMessage.find({ $or: [{ title: title }, {tags: {$in: tags.split(',')}}] })
         res.status(200).json({ data: posts });

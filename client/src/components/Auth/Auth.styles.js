@@ -31,7 +31,7 @@ export const PostPaper = styled(Paper)(({ theme }) => ({
  */
 export const LockIcon = styled(Avatar)(({ theme }) => ({
     margin:          theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.deepPurple500.main,
 }));
 
 /**

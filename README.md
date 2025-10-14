@@ -2,7 +2,7 @@
 ------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
 
-* This project was created in reference to 
+1. This project was created in reference to 
     - Full Stack MERN Project - Build and Deploy an App | React + Redux, Node, Express, MongoDB [Part 1/2]
         > [https://www.youtube.com/watch?v=ngc9gnGgUdA&list=RDCMUCmXmlB4-HJytD7wek0Uo97A&index=1]
     - Full Stack MERN Project - Build and Deploy an App | React + Redux, Node, Express, MongoDB [Part 2/2]
@@ -18,13 +18,13 @@
 **Setting up Memories App**
 ------------------------------------------------------------------------------------------------------------
 
-* Dependencies.
+1. Dependencies.
     - Node.js
     - Express.js
     - Mongoose
     - DockerDesktop (Enable Kubernetes) 
 
-* Initializing project folders and dependencies.
+2. Initializing project folders and dependencies.
     - FrontEnd Client.
         * > `cd client && npx create-react-app .`
         * > `npm i axios moment jwt-decode react-toastify react-redux @reduxjs/toolkit`
@@ -34,11 +34,11 @@
         * > `npm i colors express cors mongoose dotenv bcryptjs jsonwebtoken express-async-handler`
         * > `npm install -g nodemon`
 
-* Setting up MongoAtlas DB.
+3. Setting up MongoAtlas DB.
    - Navigate to [https://cloud.mongodb.com/] and login.
    - Go to Clusters -> Collections -> Add my own data -> Create Collection.
 
-* Setting up Docker.
+4. Setting up Docker.
     - Login.
         * > `docker login -u ${username}`
     - Docker cleanup commands.
@@ -46,7 +46,7 @@
         * > `docker image prune --all --force`
         * > `docker system prune`
    
-* Connecting to Database.
+5. Connecting to Database.
     - Go to Clusters -> Connect -> MongoDB for VS Code.
     - Copy uri into var <ATLAS_URI> in .env file with extension [memories?retryWrites=true&w=majority]
     - In [k8s/secret.yml] need to update the <data.DBPASSWORD> to base-encoded64 <ATLAS_URI>
@@ -58,25 +58,25 @@
 **Running Memories App locally**
 ------------------------------------------------------------------------------------------------------------
 
-* Debugging.
+1. Debugging.
     - <Shift><Ctrl><J> to open browser console for debugging.
     - `npm ls react`
     - `npm cache clean --force`
     - `npm install -g npm`
 
-* Running project manually.
+2. Running project manually.
     - Open two terminals.
     - `cd server && npm start`
     - `cd client && npm start`
 
-* Running project Docker.
+3. Running project Docker.
     - Run project.
         * > On windows machine open DockerDesktop.
         * > navigate to [http://localhost:3050/] in browser after running compose.
             > `docker-compose -f docker-compose.dev.yml up --detach`
             > `docker-compose -f docker-compose.dev.yml down`
 
-* Running project K8s.
+4. Running project K8s.
     - Initiate K8s.
         * > Create repos [mern-memories-client] and [mern-memories-server] in Dockerhub before pushing. 
             images there. Need images in Dockerhub because thats where Kubernetes manifest files pull it from.
@@ -107,7 +107,6 @@
 
 **Running Memories App in Cloud (AWS)**
 ------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------
 
 * ELB Deployment
     - Important steps:
@@ -128,10 +127,9 @@
 
 **GoogleAuth**
 ------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------
-* React install
-    #### `npm i @react-oauth/google@latest`
-* Google Setup
+1. React install
+    > `npm i @react-oauth/google@latest`
+2. Google Setup
     - Login to google cloud [console.google.cloud.com]
         > Click top right honey-comb menu and Create a new project.
         > Go to the project page -> "APIs and Services".
