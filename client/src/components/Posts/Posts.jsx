@@ -9,7 +9,7 @@ import * as Styled from './Posts.styles';
 
 /** ----------------------------------------------------------------------------------------
  * 
- * @param {*} param0 User id of logged in person.
+ * @param {*} setCurrentId New user id of logged in person.
  * @returns a list of every post
  * ----------------------------------------------------------------------------------------*/
 export default function Posts({ setCurrentId }) {

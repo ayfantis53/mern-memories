@@ -2,9 +2,7 @@
 import { useEffect      } from 'react';
 import { Link           } from 'react-router';
 import { PaginationItem } from '@mui/material';
-import { useDispatch, useSelector   } from 'react-redux';
-
-
+import { useDispatch, useSelector } from 'react-redux';
 
 // project imports
 import { getPosts } from '../../actions/posts';
@@ -13,8 +11,8 @@ import * as Styled from './Paginate.styles';
 
 /** ----------------------------------------------------------------------------------------
  * 
- * @param {*} param0 
- * @returns a 
+ * @param {*} page page number to set website to.
+ * @returns a page with the posts correlating with that page
  * ----------------------------------------------------------------------------------------*/
 export default function Paginate({ page }) {
 

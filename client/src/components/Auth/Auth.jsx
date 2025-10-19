@@ -43,7 +43,7 @@ export default function Auth() {
 
     // Inputs being entered in.
     const handleChange = (e) => {
-        setFormData({...formData, [e.target.name] : [e.target.value] });
+        setFormData({ ...formData, [e.target.name] : [e.target.value] });
     };
 
     // Show password input.
@@ -125,7 +125,7 @@ export default function Auth() {
                     <Grid container justify='flex-end'>
                         <Grid>
                             <Button onClick={switchMode} color='secondary'>
-                                {isSignup ? 'Already Have an account? Sign In' : 'Dont have an account? Sign Up' }
+                                { isSignup ? 'Already Have an account? Sign In' : 'Dont have an account? Sign Up' }
                             </Button>
                         </Grid>
                     </Grid>

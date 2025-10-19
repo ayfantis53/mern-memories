@@ -5,7 +5,6 @@ import { Provider            } from 'react-redux';
 import { ThemeProvider       } from '@mui/material';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
-
 // project imports
 import './index.css';
 import App       from './App';

@@ -6,6 +6,12 @@ import { IconButton, Grid, InputAdornment, TextField } from "@mui/material";
 
 /** ----------------------------------------------------------------------------------------
  * 
+ * @param {*} name               Name of text field.
+ * @param {*} handleChange       Function that will set the new value.
+ * @param {*} label              Name of text Field as label.
+ * @param {*} autoFocus          Autofocus boolean.
+ * @param {*} type               Type of text field.
+ * @param {*} handleShowPassword Boolean that shows password characters.
  * @returns Custom text field components for text input on form
  * ----------------------------------------------------------------------------------------*/
 export default function Input({ name, handleChange, label, autoFocus, type, handleShowPassword }) {

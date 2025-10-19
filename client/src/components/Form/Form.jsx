@@ -6,13 +6,15 @@ import { useNavigate                      } from 'react-router';
 import { ToastContainer, toast            } from 'react-toastify';
 import { TextField, Typography, Button    } from "@mui/material";
 
+// project imports
 import * as Styled from './Form.styles';
 import { createPosts, updatePosts } from '../../actions/posts';
 
 
 /** ----------------------------------------------------------------------------------------
  * 
- * @param {*} param0 User id of logged in person.
+ * @param {*} currentId    User id of logged in person.
+ * @param {*} setCurrentId New User id of logged in person.
  * @returns a form of adding a memory post to the database
  * ----------------------------------------------------------------------------------------*/
 export default function Form({ currentId, setCurrentId }) {

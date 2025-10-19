@@ -55,6 +55,7 @@
 
 
 
+
 **Running Memories App locally**
 ------------------------------------------------------------------------------------------------------------
 
@@ -108,14 +109,14 @@
 **Running Memories App in Cloud (AWS)**
 ------------------------------------------------------------------------------------------------------------
 
-* ELB Deployment
+1. ELB Deployment
     - Important steps:
         > Set the security group in AWS to listen on ports 8080-9000
         > Set a bigger EC2 Instance t2-medium
         > Set environmental variables
         > Put EC2 Instances Ip address into MongoAtlas DB whitelist
 
-* EKS Deployment
+2. EKS Deployment
     - Important names and commands:
         > AWS_EKS_CLUSTER_NAME = eks-cluster
         > aws eks list-clusters --region us-east-2
@@ -144,9 +145,3 @@
         > In OathConsent Screen
             > Add emails to test in react app in "Test Users List".
             > Publish app opens it to all google users.
-
-
-
-------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------

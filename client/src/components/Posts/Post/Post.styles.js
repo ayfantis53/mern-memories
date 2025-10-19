@@ -3,7 +3,6 @@ import { styled } from '@mui/system';
 import { Card, CardActions, CardMedia, Typography } from '@mui/material';
 
 
-
 /**
  *  styled Card, with embedded styles written in CSS-in-JS style.
  * 

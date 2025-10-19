@@ -10,6 +10,7 @@ import { commentPost } from '../../actions/posts';
 
 /** ----------------------------------------------------------------------------------------
  * 
+ * @param {*} post the post id that this comment belongs to.
  * @returns the comments page of a post
  * ----------------------------------------------------------------------------------------*/
 export default function CommentSection({ post }) {

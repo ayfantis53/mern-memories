@@ -16,8 +16,8 @@ import { deletePosts, likePosts } from '../../../actions/posts';
 
 /** ----------------------------------------------------------------------------------------
  * 
- * @param {*} param0 post id.
- * @param {*} param0 User id of logged in person.
+ * @param {*} post         post id.
+ * @param {*} setCurrentId User id of logged in person.
  * @returns a post with all the data entered from a user in card format
  * ----------------------------------------------------------------------------------------*/
 export default function Post({ post, setCurrentId }) {

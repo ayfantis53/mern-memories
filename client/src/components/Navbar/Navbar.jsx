@@ -1,9 +1,11 @@
+// npm installs
 import { useState, useEffect, useCallback      } from 'react';
 import { jwtDecode                             } from 'jwt-decode';
 import { useDispatch                           } from 'react-redux';
 import { useNavigate, useLocation              } from 'react-router';
 import { Button                                } from '@mui/material';
 
+// project imports
 import * as Styled from './Navbar.styles';
 import memoriesLogo from '../../images/memories-Logo.png';
 import memoriesText from '../../images/memories-Text.png';

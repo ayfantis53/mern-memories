@@ -22,10 +22,12 @@ export default function PostDetails() {
   const navigate                   = useNavigate();
   const { post, posts, isLoading } = useSelector((state) => state.posts);
 
+  // Populate post on startup of page.
   useEffect(() => {
     dispatch(getPost(id))
   }, [id, dispatch]);
 
+  // Populate post on startup of page based on search of user.
   useEffect(() => {
     if (post) {
       dispatch(getPostsBySearch({ search: 'none', tags: post?.tags.join(',')}));
@@ -36,6 +38,7 @@ export default function PostDetails() {
     return null;
   };
 
+  // Loading animation.
   if (isLoading) {
     return(
       <Styled.LoadingPaper elevation={6}>

@@ -9,7 +9,7 @@ import reducers from '../reducers/reducer';
 
 /**
  * 
- * @return Our credentials and goal making stores for api requests
+ * @return Our credentials and memory making stores for api requests
  */
 export const store = configureStore(
   {

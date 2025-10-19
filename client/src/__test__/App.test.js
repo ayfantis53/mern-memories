@@ -15,7 +15,7 @@ const google_client_id = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 /** ----------------------------------------------------------------------------------------
  *  Validate App rendering
  * ---------------------------------------------------------------------------------------- */
-describe('|--------------------- App.test.js ---------------------|',()=>{
+describe('|--------------------- App.test.js ---------------------|',() => {
   test('renders default page', () => {
     render(
       <Provider store={store}>
