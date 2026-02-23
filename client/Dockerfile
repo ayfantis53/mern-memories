@@ -13,7 +13,7 @@
 ############################################################################################
 # Node Building Layer
 # This is a MINIMAL RUNTIME image to run Node project
-# For building Memories app on pipeline
+# For building Memories frontend on pipeline
 ############################################################################################
 
 # Use Node image as base layer
