@@ -1,3 +1,22 @@
+############################################################################################
+#
+#    ____ _ _            _   
+#   / ___| (_) ___ _ __ | |_ 
+#  | |   | | |/ _ \ '_ \| __|
+#  | |___| | |  __/ | | | |_ 
+#   \____|_|_|\___|_| |_|\__|                            
+#
+# CLIENT
+#
+# https://github.com/ayfantis53/mern-memories/blob/master/client/Dockerfile
+
+############################################################################################
+# Node Building Layer
+# This is a MINIMAL RUNTIME image to run Node project
+# For building Memories app on pipeline
+############################################################################################
+
+# Use Node image as base layer
 FROM node:latest AS builder
 
 # Create app directory
@@ -13,9 +32,16 @@ COPY . .
 # run app use RUN and not CMD for this is production
 RUN npm run build
 
-# NEEDED FOR K8S DEPLOYMENT OF APP ----------------------------------
+############################################################################################
+# NGINX Building Layer
+# This is a MINIMAL RUNTIME image so project can use ingress on k8s cluster
+# For k8s deployment of app
+############################################################################################
+
+# Use Nginx image as base layer
 FROM nginx
 
+# expose port for pod communication
 EXPOSE 3000
 
 # Copy our config into container
