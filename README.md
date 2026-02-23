@@ -39,7 +39,7 @@ npm install -g nodemon
 ```
 
 ### 3. Setting up MongoAtlas DB.
-- Navigate to [https://cloud.mongodb.com/] and login.
+- Navigate to **[https://cloud.mongodb.com/]** and login.
 - Go to **Clusters -> Collections -> Add my own data -> Create Collection**.
 
 ### 4. Setting up Docker.
@@ -56,8 +56,8 @@ docker system prune
    
 ### 5. Connecting to Database.
 - Go to **Clusters -> Connect -> MongoDB** for VS Code.
-- Copy uri into var <ATLAS_URI> in .env file with extension [memories?retryWrites=true&w=majority]
-- In [k8s/secret.yml] need to update the <data.DBPASSWORD> to base-encoded64 <ATLAS_URI>
+- Copy uri into var **<ATLAS_URI>** in .env file with extension [memories?retryWrites=true&w=majority]
+- In **[k8s/secret.yml]** need to update the **<data.DBPASSWORD>** to base-encoded64 **<ATLAS_URI>**
     ```bash
     # output of this command is the value of the secret. 
     echo -n "${WORD}" | base64
@@ -84,7 +84,7 @@ docker system prune
 ### 3. Running project Docker.
 - **Run project.**
     * On windows machine open DockerDesktop.
-    * navigate to [http://localhost:3050/] in browser after running compose.
+    * navigate to **[http://localhost:3050/]** in browser after running compose.
         ```bash
         docker-compose -f docker-compose.dev.yml up --detach
         docker-compose -f docker-compose.dev.yml down
@@ -92,7 +92,7 @@ docker system prune
 
 ### 4. Running project K8s.
 #### Initiate K8s.
-- Create repos [mern-memories-client] and [mern-memories-server] in Dockerhub before pushing images there. Need images in Dockerhub because thats where Kubernetes manifest files pull it from.
+- Create repos **[mern-memories-client]** and **[mern-memories-server]** in Dockerhub before pushing images there. Need images in Dockerhub because thats where Kubernetes manifest files pull it from.
 - **Change routes in [./server/src/index.js]**
     * `line 26`: take out the "/api"
     * `line 27`: take out the "/api"
@@ -119,7 +119,9 @@ kubectl apply -f k8s/
 
 #### Take down project.
 ```bash
+# Take down Ingress
 kubectl delete -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.12.2/deploy/static/provider/cloud/deploy.yaml`
+# Take down local manifests
 kubectl delete -f k8s/
 ```
 
