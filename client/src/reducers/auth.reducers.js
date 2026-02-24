@@ -1,7 +1,7 @@
 /**
  * Reducer that updates authentication state from actions dispatched to Redux store
- * @param {*} state  The current state of the authentication data in the Redux store.
- * @param {*} action An object containing the action type and any associated data.
+ * @param {Object} state  The current state of the authentication data in the Redux store.
+ * @param {Object} action An object containing the action type and any associated data.
  * @returns new state
  */
 const authReducer = (state = { authData: null }, action) => {

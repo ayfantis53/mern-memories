@@ -11,7 +11,7 @@ import * as Styled from './Paginate.styles';
 
 /** ----------------------------------------------------------------------------------------
  * 
- * @param {*} page page number to set website to.
+ * @param {number} page page number to set website to.
  * @returns a page with the posts correlating with that page
  * ----------------------------------------------------------------------------------------*/
 export default function Paginate({ page }) {

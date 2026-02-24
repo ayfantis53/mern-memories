@@ -13,8 +13,8 @@ import { createPosts, updatePosts } from '../../actions/posts';
 
 /** ----------------------------------------------------------------------------------------
  * 
- * @param {*} currentId    User id of logged in person.
- * @param {*} setCurrentId New User id of logged in person.
+ * @param {string}   currentId    User id of logged in person.
+ * @param {function} setCurrentId New User id of logged in person.
  * @returns a form of adding a memory post to the database
  * ----------------------------------------------------------------------------------------*/
 export default function Form({ currentId, setCurrentId }) {
@@ -103,7 +103,7 @@ export default function Form({ currentId, setCurrentId }) {
     <>
       <Styled.PostContainer elevation={6}>
         {/* FORM TO SUBMIT A NEW POST */}
-        <Styled.Form autoComplete='off' noValidate onSubmit={handleSubmit} action="">
+        <Styled.Form autoComplete='off' noValidate onSubmit={handleSubmit} action="" data-testid='memory-form'>
           {/* FORM TITLE */}
           <Typography variant="h6"> {currentId ? 'Editing' : 'Creating'} a Memory </Typography>
           {/* TITLE INPUT */}

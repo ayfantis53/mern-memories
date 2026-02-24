@@ -4,9 +4,9 @@ import jwt from 'jsonwebtoken';
 
 /**
  *  Secure routes by verifying user authentication and authorization
- * @param {*} req  The request object containing information about the incoming client request.
- * @param {*} res  The response object used to send responses back to the client.
- * @param {*} next A function to pass control to the next middleware function in the chain.
+ * @param {Object}   req  The request object containing information about the incoming client request.
+ * @param {Object}   res  The response object used to send responses back to the client.
+ * @param {function} next A function to pass control to the next middleware function in the chain.
  * @return void
  */
 const auth = async(req, res, next) => {

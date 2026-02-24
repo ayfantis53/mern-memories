@@ -87,7 +87,7 @@ export default function Auth() {
                 {/* BUTTON TO SIGNIN OR SIGNUP */}
                 <Typography variant='h5'> { isSignup? 'Sign Up' : 'Sign In' } </Typography>
                 {/* FORM TO SIGNIN */}  
-                <Styled.Form onSubmit={handleSubmit}>
+                <Styled.Form onSubmit={handleSubmit} data-testid='signin-form'>
                     <Grid spacing={2}>
                         {
                             isSignup && (
