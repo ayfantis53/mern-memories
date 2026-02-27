@@ -16,18 +16,25 @@
 # For building Memories app backend on pipeline
 ############################################################################################
 
-# Use Node image as base layer
+# Use the official Node.js runtime as the parent image.
+# This provides the necessary environment to run a Node.js application.
 FROM node:latest
 
-# Create app directory
-WORKDIR '/app'
+# Set the working directory inside the container.
+# All subsequent instructions will be executed relative to this directory.
+WORKDIR /app
 
-# Install app dependencies
-COPY ./package*.json ./
+# Copy package.json and package-lock.json first to leverage Docker cache.
+# This prevents reinstalling dependencies if only application code changes.
+COPY package*.json ./
+
+# Install project dependencies.
+# Docker will only re-run this step if the package*.json files have changed, saving build time.
 RUN npm install
 
-# Bundle app source
+# Copy the rest of the application source code to /app
 COPY . .
 
-# run app
+# Specify the command to run when the container starts.
+# This command builds the application, which is the default behavior when the container runs.
 CMD ["npm", "run", "build"]
